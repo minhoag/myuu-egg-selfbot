@@ -1,0 +1,25 @@
+{
+  "name": "egg-collector-1.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
+    "format": "yarn prettier . --write"
+  },
+  "keywords": [],
+  "author": "minhoag",
+  "license": "ISC",
+  "description": "A discord self-bot to self-collecting egg from Myuu Pokemon game.",
+  "dependencies": {
+    "discord.js-selfbot-v13": "^3.4.5",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.16.0",
+    "prettier": "3.4.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "globals": "^15.13.0"
+  }
+}
