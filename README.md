@@ -43,7 +43,7 @@ Traditional way to install:
 ### Configure the `.env` File
 
 1. Rename the `.env.template` file to `.env`.
-2. Fill in all the required fields.
+2. Fill in all the required fields, using Notepad or anything that can edit text.
 
 ### `PREFIX`
 
