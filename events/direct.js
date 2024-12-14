@@ -12,7 +12,7 @@ const direct = {
     try {
       const channel = await message.client.channels.fetch(process.env.CHANNEL_ID);
       if (!channel || channel.type !== 'GUILD_TEXT')
-        return console.error('E[direct-fetch]: Channel cannot be fetched.');
+        return console.error('Error [direct-fetch]: Channel cannot be fetched.');
       const getName = str => str.substring(str.indexOf(':') + 1, str.lastIndexOf(':')).toLowerCase();
       message.embeds.map(async i => {
         if (i.description.includes('hatched from the Egg!')) {
@@ -23,7 +23,7 @@ const direct = {
         }
       });
     } catch (error) {
-      console.error(`E[direct]: ${error}`);
+      console.error(`Error [direct]: ${error}`);
     }
   },
 };

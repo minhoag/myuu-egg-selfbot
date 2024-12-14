@@ -16,7 +16,7 @@ const get = {
      * -> Each command choices are seperated with commas.
      * **/
     if (args.length < 1) {
-      console.error('E[get-arg]: This command require arguments.');
+      console.error('Error [get-arg]: This command require arguments.');
     }
     try {
       if (args.includes('egg')) {
@@ -25,10 +25,10 @@ const get = {
         const arg = args.filter(i => i.name === 'pokemon');
         await message.channel.sendSlash(process.env.MYUU_ID, 'get', 'pokemon', arg.join(','));
       } else {
-        console.error(`E[get-id]: ${process.env.MYUU_ID} not found`);
+        console.error(`Error [get-id]: ${process.env.MYUU_ID} not found`);
       }
     } catch (error) {
-      console.error(`E[get]: ${error}`);
+      console.error(`Error [get]: ${error}`);
     }
   },
   aliases: 'get',

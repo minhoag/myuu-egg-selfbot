@@ -1,4 +1,5 @@
 @echo off
+
 :: Check if Node.js is installed
 node -v >nul 2>&1
 
@@ -37,12 +38,22 @@ if exist node_modules (
     )
 )
 
+:: Check if .env.example exists and rename it to .env
+if exist .env.example (
+    echo .env.example file found. Renaming it to .env...
+    ren .env.example .env
+
+    :: Ask the user to fill in the .env file
+    echo Please fill in the .env file with your TOKEN and CHANNEL_ID.
+    pause
+)
+
 :: Ask if the user has filled in the .env file
-echo Have you filled in the .env file with the necessary configurations? (y/n)
+echo Have you filled in the .env file with your TOKEN and CHANNEL_ID? (y/n)
 set /p user_input=Your choice: 
 
 if /i "%user_input%" NEQ "y" (
-    echo Please fill in the .env file before proceeding.
+    echo Please add your TOKEN and CHANNEL_ID into .env file before proceeding.
     pause
     exit /b
 )

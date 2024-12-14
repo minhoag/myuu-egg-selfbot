@@ -12,7 +12,7 @@ module.exports = client => {
   readdirSync(eventsDir).forEach(file => {
     if (!file.endsWith('.js')) return;
     let event = require(`${eventsDir}/${file}`);
-    if (!event) return console.error('E[handler-event]: No event exist in folder events.');
+    if (!event) return console.error('Error [handler-event]: No event exist in folder events.');
     event.once
       ? client.once(event.name, (...args) => event.execute(...args))
       : client.on(event.name, (...args) => event.execute(...args));

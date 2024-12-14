@@ -29,9 +29,9 @@ readdirSync(handlersDir).forEach(handler => {
 /**
  * Handle login. Check if TOKEN is available
  * **/
-if (!process.env.TOKEN) return console.error('E[index-token]: Token is missing!');
+if (!process.env.TOKEN) return console.error('Error [index-token]: Token is missing!');
 try {
   client.login(process.env.TOKEN);
 } catch (err) {
-  console.error('E[index-login]: ', err);
+  console.error('Error [index-login]: ', err);
 }
