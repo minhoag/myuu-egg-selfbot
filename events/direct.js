@@ -17,7 +17,7 @@ const direct = {
       await sleep(randomNumber);
       message.embeds.map(async i => {
         if (i.description.includes('hatched from the Egg!')) {
-          await message.channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, process.env.POKEMON);
+          await channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, process.env.POKEMON);
         } else if (i.description.includes('A new Egg is ready in the Daycare!')) {
           await channel.sendSlash(process.env.MYUU_ID, 'get', 'egg', 'Take');
         }

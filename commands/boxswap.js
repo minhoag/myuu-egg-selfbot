@@ -19,7 +19,7 @@ const get = {
       console.error('Error [get-arg]: This command require arguments.');
     }
     try {
-      await message.channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, ...args);
+      await message.channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, args[1]);
     } catch (error) {
       console.error(`Error [boxswap]: ${error}`);
     }
