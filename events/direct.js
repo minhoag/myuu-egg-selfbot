@@ -1,3 +1,5 @@
+const { sleep } = require('../function');
+
 const direct = {
   name: 'messageCreate',
   once: false,
@@ -29,9 +31,5 @@ const direct = {
     }
   },
 };
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 module.exports = direct;

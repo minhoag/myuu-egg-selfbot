@@ -1,3 +1,5 @@
+const { sleep } = require('../function');
+
 const command = {
   name: 'messageCreate',
   once: false,
@@ -40,6 +42,7 @@ const command = {
       );
     }
     command.execute(message, args);
+    await sleep(1000);
     message.delete(message.id);
   },
 };
