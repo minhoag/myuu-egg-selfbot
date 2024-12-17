@@ -24,8 +24,6 @@ const get = {
       } else if (args.includes('pokemon')) {
         const arg = args.filter(i => i.name === 'pokemon');
         await message.channel.sendSlash(process.env.MYUU_ID, 'get', 'pokemon', arg.join(','));
-      } else {
-        console.error(`Error [get-id]: ${process.env.MYUU_ID} not found`);
       }
     } catch (error) {
       console.error(`Error [get]: ${error}`);
