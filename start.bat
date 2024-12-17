@@ -76,6 +76,10 @@ if exist .env (
     )
 )
 
+:: Update Code
+echo Running Update
+git pull
+
 :: Ask if the user has filled in the .env file
 echo Have you filled in the .env file with your TOKEN and CHANNEL_ID? (y/n)
 set /p user_input=Your choice:
