@@ -38,6 +38,15 @@ if %errorlevel% neq 0 (
 :: Clean up the installer
 if exist git-installer.exe del git-installer.exe
 
+:: Clone the repository if it does not exist
+if not exist myuu-egg-selfbot (
+    echo Cloning the repository...
+    git clone https://github.com/minhoag/myuu-egg-selfbot.git myuu-egg-selfbot
+)
+
+:: Navigate to the repository directory
+cd myuu-egg-selfbot
+
 :: Check if node_modules directory exists
 if exist node_modules (
     echo node_modules folder already exists. Skipping npm install.
@@ -64,10 +73,6 @@ if exist .env (
     if exist .env.example (
         echo .env.example file found. Copying it to .env...
         copy .env.example .env
-
-        :: Ask the user to fill in the .env file
-        echo Please fill in the .env file with your TOKEN and CHANNEL_ID.
-        pause
     )
 )
 
@@ -81,31 +86,9 @@ if /i "%user_input%" NEQ "y" (
     exit /b
 )
 
-:: Check if the current directory is a git repository
-git rev-parse --is-inside-work-tree >nul 2>&1
-
-:: If not a git repository, initialize a new git repository
-if %errorlevel% neq 0 (
-    echo Initializing a new git repository...
-    git init
-    git remote add origin https://github.com/minhoag/myuu-egg-selfbot.git
-)
-
-:: Fetch the latest changes from the public repository
-echo Fetching the latest version of the software...
-git fetch origin main
-git reset --hard FETCH_HEAD
-
-:: Ask the user if they want to start the application
-echo Do you want to start the application now? (y/n)
-set /p start_choice=Your choice:
-
-if /i "%start_choice%" == "y" (
-    echo Starting the application...
-    node index.js
-) else (
-    echo Application will not start. Exiting...
-)
+:: Start the application
+echo Starting the application...
+node index.js
 
 :: Keep the command window open
 pause
