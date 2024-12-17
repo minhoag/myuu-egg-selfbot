@@ -18,6 +18,7 @@ Easier way to install:
 2. **Run start.bat file with administrator**:
 
    - This script will help you download and install Node.js from the [official website](https://nodejs.org/en/download/package-manager).
+   - This script will install git for keeping the project up-to-date.
    - It will also help you install all the required **Dependencies**
 
 Traditional way to install:
