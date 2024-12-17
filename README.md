@@ -1,49 +1,64 @@
 # Auto Egg-Collecting Selfbot
 
-This project is built using `discord.js-selfbot-v13@v3.4`, a [Node.js](https://nodejs.org/) module that enables user accounts to interact with the Discord API v9.
-
-⚠️ **Disclaimer**:
-
-- I am not responsible for any blocked Discord or Myuu accounts resulting from the use of this bot.
-- Using a selfbot on a user account violates the **[Discord Terms of Service](https://discord.com/terms)** and may lead to account suspension.
-- By proceeding, you acknowledge these risks.
+This project is built using **`discord.js-selfbot-v13`**, a [Node.js](https://nodejs.org/) module that enables user accounts to interact with the Discord API v9.
 
 ---
 
-## Prerequisites
+## ⚠️ Disclaimer
 
-Easier way to install:
+- I am not responsible for any **blocked Discord accounts** or **Myuu accounts** resulting from the use of this bot.
+- Using a selfbot on a user account **violates the [Discord Terms of Service](https://discord.com/terms)** and may lead to account suspension.
+- By using this bot, you acknowledge and accept these risks.
 
-1. Download installer: [Download](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
-2. **Run `start.bat` file as administrator**:
-   - This script will help you download and install Node.js from the [official website](https://nodejs.org/en/download/package-manager).
-   - This script will install git for keeping the project up-to-date.
-   - It will also help you install all the required **Dependencies**
 ---
 
-## Setting Up the Bot
+## 📋 Prerequisites
 
-### Configure the `.env` File
+### Easiest Way to Install:
 
-1. Rename the `.env.template` file to `.env`.
-2. Fill in all the required fields, using Notepad or anything that can edit text.
+1. Download the installer: [Download Here](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
+2. **Run the `start.bat` file as administrator**:
+   - Automatically downloads and installs **Node.js** from the [official website](https://nodejs.org/en/download/package-manager).
+   - Installs **Git** to ensure the project remains up-to-date.
+   - Installs all required dependencies for the project.
+
+---
+
+## 🚀 Setting Up the Bot
+
+### Step 1: Configure the `.env` File
+
+1. Open the `.env` file using any text editor (e.g., Notepad).
+2. Fill in the required fields:
+   - **TOKEN**: Your Discord user token.
+   - **CHANNEL_ID**: The ID of the channel the bot will operate in.
+   - **PREFIX**: The command prefix you prefer.
+
+---
 
 ### `PREFIX`
 
-- Set a command prefix that suits your preference.
-- Bot commands follow this format: `[prefix][command][arguments]`
-- Example: `.get Egg`
+The command prefix defines how you interact with your bot.  
+You can choose any prefix you like.
+
+- **Example**:
+   - If the prefix is set to `.`:
+      - To execute a command: `.get Egg`
+
+---
 
 ### `TOKEN`
 
-Since this is a selfbot, it operates directly on your user account, requiring your **Discord user token**.
+Since this is a selfbot, the bot will operate directly using your **Discord user token**.
 
-**Warning**: Keep your token secure! If someone gains access to your token, they can take control of your account.
+🔒 **Important**:
+- Never share your token with anyone!
+- If someone gains access to your token, they can **control your account**, so keep it safe.
 
-#### How to Retrieve Your Token:
+#### How to Retrieve Your Discord Token:
 
 1. Log in to your [Discord account](https://discord.com/).
-2. Open the developer tools by pressing `F12` on your keyboard.
+2. Press **`F12`** to open the Developer Tools.
 3. Navigate to the **Console** tab.
 4. Paste the following script into the console and press Enter:
 
@@ -65,33 +80,40 @@ Since this is a selfbot, it operates directly on your user account, requiring yo
        }
      },
    ]);
-   console.log('%cWorked!', 'font-size: 50px');
-   console.log('%cYour token is now copied to the clipboard!', 'font-size: 16px');
+   console.log('%cToken Retrieved!', 'font-size: 20px; color: green;');
+   console.log('%cYour token is now copied to the clipboard.', 'font-size: 14px;');
    ```
 
-5. Your token will be copied to your clipboard. Paste it into the `.env` file as instructed.
-
-### `CHANNEL_ID`
-
-The bot requires a channel ID to know where it should operate. For best performance, consider creating a new server just for yourself to minimize message processing overhead.
-
-#### How to Get a Channel ID:
-
-1. Enable **Developer Mode**:
-
-   - Go to **User Settings** > **Advanced**.
-   - Toggle on **Developer Mode**.
-
-2. Retrieve the Channel ID:
-   - Right-click the desired channel in Discord.
-   - Select **Copy Channel ID**.
-   - Paste the ID into the `.env` file.
+5. Your token will be copied to your clipboard.
+6. Paste the token into the `.env` file in the `TOKEN` field.
 
 ---
 
-## Final Notes
+### `CHANNEL_ID`
 
-- Use the bot responsibly.
-- Always be aware of the risks when operating selfbots.
+The bot requires a **channel ID** to function. This ID specifies the channel it will operate in.
 
-Happy egg collecting! 🥚
+#### How to Retrieve a Channel ID:
+
+1. Enable **Developer Mode** in Discord:
+   - Go to **User Settings** > **Advanced**.
+   - Toggle on **Developer Mode**.
+2. Copy the channel ID:
+   - Right-click on the desired channel in Discord.
+   - Select **Copy Channel ID**.
+   - Paste the ID into the `.env` file under the `CHANNEL_ID` field.
+
+💡 **Tip**:  
+To improve performance, consider creating a **private server** to minimize unnecessary message processing overhead.
+
+---
+
+## 📜 Final Notes
+
+- **Use the bot Responsibly:** Operating selfbots on Discord is against their Terms of Service. You are solely responsible for the consequences of using this bot.
+- **Keep Your Credentials Secure:** Never share your token or sensitive details with anyone to avoid account compromise. 
+- If you encounter any issues, feel free to open an issue report or suggest improvements in the project's repository.
+
+---
+
+🥚 **Happy Egg Collecting!**
