@@ -29,6 +29,8 @@ if %errorlevel% neq 0 (
     :: Download and install Git (using the latest version)
     powershell -Command "Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe -OutFile git-installer.exe"
     start /wait git-installer.exe /VERYSILENT /NORESTART
+    :: Create .git folder
+    git init
     echo Git has been installed.
 ) else (
     for /f "delims=" %%i in ('git --version') do set git_version=%%i
