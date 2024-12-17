@@ -14,29 +14,12 @@ This project is built using `discord.js-selfbot-v13@v3.4`, a [Node.js](https://n
 
 Easier way to install:
 
-1. Download project: [Download](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
+1. Download installer: [Download](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
 2. **Run start.bat file with administrator**:
 
    - This script will help you download and install Node.js from the [official website](https://nodejs.org/en/download/package-manager).
    - This script will install git for keeping the project up-to-date.
    - It will also help you install all the required **Dependencies**
-
-Traditional way to install:
-
-1. Download project: [Download](https://github.com/minhoag/myuu-egg-selfbot/archive/refs/heads/main.zip)
-
-2. **Install Node.js**:
-
-   - Download and install Node.js from the [official website](https://nodejs.org/en/download/package-manager).
-
-3. **Install Dependencies**:
-
-   - Use `npm` to install the required dependencies:
-
-   ```bash
-   npm install
-   ```
-
 ---
 
 ## Setting Up the Bot
