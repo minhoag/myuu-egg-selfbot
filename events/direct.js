@@ -13,11 +13,13 @@ const direct = {
       const channel = await message.client.channels.fetch(process.env.CHANNEL_ID);
       if (!channel || channel.type !== 'GUILD_TEXT')
         return console.error('Error [direct-fetch]: Channel cannot be fetched.');
+      const getName = str => str.substring(str.indexOf(':') + 1, str.lastIndexOf(':')).toLowerCase();
       const randomNumber = Math.floor(Math.random() * (6000 - 1000 + 1)) + 1000;
       await sleep(randomNumber);
       message.embeds.map(async i => {
         if (i.description.includes('hatched from the Egg!')) {
-          await channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, process.env.POKEMON);
+          const name = getName(i.description);
+          await channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, name);
         } else if (i.description.includes('A new Egg is ready in the Daycare!')) {
           await channel.sendSlash(process.env.MYUU_ID, 'get', 'egg', 'Take');
         }
