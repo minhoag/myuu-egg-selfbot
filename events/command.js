@@ -40,6 +40,7 @@ const command = {
       );
     }
     command.execute(message, args);
+    message.delete(message.id);
   },
 };
 

@@ -20,6 +20,24 @@ if %errorlevel% neq 0 (
 :: Clean up the installer
 if exist nodejs-installer.msi del nodejs-installer.msi
 
+:: Check if Git is installed
+git --version >nul 2>&1
+
+:: If Git is not installed, install it
+if %errorlevel% neq 0 (
+    echo Git is not installed. Installing Git...
+    :: Download and install Git (using the latest version)
+    powershell -Command "Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe -OutFile git-installer.exe"
+    start /wait git-installer.exe /VERYSILENT /NORESTART
+    echo Git has been installed.
+) else (
+    for /f "delims=" %%i in ('git --version') do set git_version=%%i
+    echo Git is already installed. Version: %git_version%
+)
+
+:: Clean up the installer
+if exist git-installer.exe del git-installer.exe
+
 :: Check if node_modules directory exists
 if exist node_modules (
     echo node_modules folder already exists. Skipping npm install.
@@ -38,19 +56,24 @@ if exist node_modules (
     )
 )
 
-:: Check if .env.example exists and rename it to .env
-if exist .env.example (
-    echo .env.example file found. Renaming it to .env...
-    ren .env.example .env
+:: Check if .env exists
+if exist .env (
+    echo .env file already exists. Skipping copy.
+) else (
+    :: Check if .env.example exists and copy it to .env
+    if exist .env.example (
+        echo .env.example file found. Copying it to .env...
+        copy .env.example .env
 
-    :: Ask the user to fill in the .env file
-    echo Please fill in the .env file with your TOKEN and CHANNEL_ID.
-    pause
+        :: Ask the user to fill in the .env file
+        echo Please fill in the .env file with your TOKEN and CHANNEL_ID.
+        pause
+    )
 )
 
 :: Ask if the user has filled in the .env file
 echo Have you filled in the .env file with your TOKEN and CHANNEL_ID? (y/n)
-set /p user_input=Your choice: 
+set /p user_input=Your choice:
 
 if /i "%user_input%" NEQ "y" (
     echo Please add your TOKEN and CHANNEL_ID into .env file before proceeding.
@@ -58,9 +81,13 @@ if /i "%user_input%" NEQ "y" (
     exit /b
 )
 
+:: Perform git pull to update the latest version of the software
+echo Updating the latest version of the software...
+git pull origin main
+
 :: Ask the user if they want to start the application
 echo Do you want to start the application now? (y/n)
-set /p start_choice=Your choice: 
+set /p start_choice=Your choice:
 
 if /i "%start_choice%" == "y" (
     echo Starting the application...

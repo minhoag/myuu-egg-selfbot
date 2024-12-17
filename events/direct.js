@@ -13,6 +13,8 @@ const direct = {
       const channel = await message.client.channels.fetch(process.env.CHANNEL_ID);
       if (!channel || channel.type !== 'GUILD_TEXT')
         return console.error('Error [direct-fetch]: Channel cannot be fetched.');
+      const randomNumber = Math.floor(Math.random() * (6000 - 1000 + 1)) + 1000;
+      await sleep(randomNumber);
       message.embeds.map(async i => {
         if (i.description.includes('hatched from the Egg!')) {
           await message.channel.sendSlash(process.env.MYUU_ID, 'box swap', '1', undefined, process.env.POKEMON);
@@ -25,5 +27,9 @@ const direct = {
     }
   },
 };
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 module.exports = direct;
