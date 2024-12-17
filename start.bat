@@ -29,8 +29,6 @@ if %errorlevel% neq 0 (
     :: Download and install Git (using the latest version)
     powershell -Command "Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe -OutFile git-installer.exe"
     start /wait git-installer.exe /VERYSILENT /NORESTART
-    :: Create .git folder
-    git init
     echo Git has been installed.
 ) else (
     for /f "delims=" %%i in ('git --version') do set git_version=%%i
@@ -83,9 +81,20 @@ if /i "%user_input%" NEQ "y" (
     exit /b
 )
 
-:: Perform git pull to update the latest version of the software
-echo Updating the latest version of the software...
-git pull origin main
+:: Check if the current directory is a git repository
+git rev-parse --is-inside-work-tree >nul 2>&1
+
+:: If not a git repository, initialize a new git repository
+if %errorlevel% neq 0 (
+    echo Initializing a new git repository...
+    git init
+    git remote add origin https://github.com/minhoag/myuu-egg-selfbot.git
+)
+
+:: Fetch the latest changes from the public repository
+echo Fetching the latest version of the software...
+git fetch origin main
+git reset --hard FETCH_HEAD
 
 :: Ask the user if they want to start the application
 echo Do you want to start the application now? (y/n)
