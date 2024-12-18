@@ -26,12 +26,16 @@ readdirSync(handlersDir).forEach(handler => {
   require(`${handlersDir}/${handler}`)(client);
 });
 
+// Prevent Rejection & Exception
+process.on('unhandledRejection', error => {
+  console.error('Unhandled Rejection: ', error);
+});
+process.on('uncaughtException', error => {
+  console.error('Uncaught Exception: ', error);
+});
+
 /**
  * Handle login. Check if TOKEN is available
  * **/
 if (!process.env.TOKEN) return console.error('Error [index-token]: Token is missing!');
-try {
-  client.login(process.env.TOKEN);
-} catch (err) {
-  console.error('Error [index-login]: ', err);
-}
+client.login(process.env.TOKEN).catch(err => console.error('Error [index-login]: ', err));

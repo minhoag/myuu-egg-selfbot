@@ -17,17 +17,19 @@ This project is built using **`discord.js-selfbot-v13`**, a [Node.js](https://no
 ## 📥 Easy Installation Guide
 
 1. **Download the Installer:**
+
    - [Windows](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
    - [MacOS or Linux](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.sh)
 
 2. **Run the Installer as Administrator:**
    - Run the downloaded `start.bat` (Windows) or `start.sh` (MacOS/Linux) file with administrator privileges.
    - The installer will handle the setup process, including:
-      - Downloading and installing **Node.js** from the [official website](https://nodejs.org/en/download/package-manager).
-      - Installing **Git** from [official website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to ensure the project can stay up-to-date in the future.
-      - Installing all required dependencies for the project.
-      - Launching the project.
+     - Downloading and installing **Node.js** from the [official website](https://nodejs.org/en/download/package-manager).
+     - Installing **Git** from [official website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to ensure the project can stay up-to-date in the future.
+     - Installing all required dependencies for the project.
+     - Launching the project.
    - That's it! Just download, run, and start collecting eggs!
+
 ---
 
 ## 🚀 Setting Up the Bot
@@ -46,8 +48,8 @@ The command prefix defines how you interact with your bot.
 You can choose any prefix you like.
 
 - **Example**:
-   - If the prefix is set to `.`:
-      - To execute a command: `.get Egg`
+  - If the prefix is set to `.`:
+    - To execute a command: `.get Egg`
 
 ---
 
@@ -56,6 +58,7 @@ You can choose any prefix you like.
 Since this is a selfbot, the bot will operate directly using your **Discord user token**.
 
 🔒 **Important**:
+
 - Never share your token with anyone!
 - If someone gains access to your token, they can **control your account**, so keep it safe.
 
@@ -115,7 +118,7 @@ To improve performance, consider creating a **private server** to minimize unnec
 ## 📜 Final Notes
 
 - **Use the bot Responsibly:** Operating selfbots on Discord is against their Terms of Service. You are solely responsible for the consequences of using this bot.
-- **Keep Your Credentials Secure:** Never share your token or sensitive details with anyone to avoid account compromise. 
+- **Keep Your Credentials Secure:** Never share your token or sensitive details with anyone to avoid account compromise.
 - If you encounter any issues, feel free to open an issue report or suggest improvements in the project's repository.
 
 ---
