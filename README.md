@@ -26,8 +26,6 @@ This project is built using **`discord.js-selfbot-v13`**, a [Node.js](https://no
 
 ## 🚀 Setting Up the Bot
 
-### Step 1: Configure the `.env` File
-
 1. Open the `.env` file using any text editor (e.g., Notepad).
 2. Fill in the required fields:
    - **TOKEN**: Your Discord user token.
