@@ -14,14 +14,20 @@ This project is built using **`discord.js-selfbot-v13`**, a [Node.js](https://no
 
 ## 📋 Prerequisites
 
-### Easiest Way to Install:
+## 📥 Easy Installation Guide
 
-1. Download the installer: [Download Here](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
-2. **Run the `start.bat` file as administrator**:
-   - Automatically downloads and installs **Node.js** from the [official website](https://nodejs.org/en/download/package-manager).
-   - Installs **Git** to ensure the project remains up-to-date.
-   - Installs all required dependencies for the project.
+1. **Download the Installer:**
+   - [Windows](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.bat)
+   - [MacOS or Linux](https://github.com/minhoag/myuu-egg-selfbot/releases/download/v1.0.0/start.sh)
 
+2. **Run the Installer as Administrator:**
+   - Run the downloaded `start.bat` (Windows) or `start.sh` (MacOS/Linux) file with administrator privileges.
+   - The installer will handle the setup process, including:
+      - Downloading and installing **Node.js** from the [official website](https://nodejs.org/en/download/package-manager).
+      - Installing **Git** from [official website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) to ensure the project can stay up-to-date in the future.
+      - Installing all required dependencies for the project.
+      - Launching the project.
+   - That's it! Just download, run, and start collecting eggs!
 ---
 
 ## 🚀 Setting Up the Bot
