@@ -41,9 +41,9 @@ const command = {
         Date.now() + command.cooldown * 1000,
       );
     }
-    command.execute(message, args);
     await sleep(1000);
-    message.delete(message.id);
+    await message.delete(message.id);
+    command.execute(message, args);
   },
 };
 
