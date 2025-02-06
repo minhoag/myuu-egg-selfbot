@@ -1,12 +1,13 @@
 {
   "name": "egg-collector-1.0",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint . --fix",
     "lint": "eslint .",
-    "format": "yarn prettier . --write"
+    "format": "yarn prettier . --write",
+    "build:win": "bun build --compile --sourcemap ./index.js --outfile build/run_window"
   },
   "keywords": [],
   "author": "minhoag",
