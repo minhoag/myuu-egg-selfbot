@@ -51,7 +51,7 @@ You can choose any prefix you like.
   - If the prefix is set to `.`:
     - To execute a command: `.get egg`
   - If the prefix is set to `!`:
-      - To execute a command: `!get egg`
+    - To execute a command: `!get egg`
 
 ---
 

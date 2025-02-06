@@ -5,13 +5,12 @@ const command = {
   once: false,
   execute: async message => {
     /**
-     * 1. Check if the incomming messgage is from SELF. If not, return.
+     * 1. Check if the incoming message is from SELF or is from owner. If not, return.
      * 2. Check if the message starts with prefix. IF not, return.
      * 3. Filter through commands registered, only run if 2 conditions or met:
-     * command exists, command is on cooldown
+     * - command exists, command is on cooldown
      * **/
-
-    if (message.author.id !== message.client.user?.id) return;
+    if (message.author.id !== message.client.user?.id && message.author.id !== process.env.OWNER) return;
     let prefix = process.env.PREFIX;
     if (!message.content.startsWith(prefix)) return;
     if (message.channel.type !== 'GUILD_TEXT') return;
@@ -42,8 +41,10 @@ const command = {
       );
     }
     command.execute(message, args);
-    await sleep(500);
-    await message.delete(message.id);
+    try {
+      await sleep(500);
+      await message.delete(message.id);
+    } catch { /* empty */ }
   },
 };
 

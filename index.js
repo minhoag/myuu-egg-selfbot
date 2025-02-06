@@ -38,4 +38,4 @@ process.on('uncaughtException', error => {
  * Handle login. Check if TOKEN is available
  * **/
 if (!process.env.TOKEN) return console.error('Error [index-token]: Token is missing!');
-client.login(process.env.TOKEN).catch(err => console.error('Error [index-login]: ', err));
+client.login(process.env.TOKEN).catch(err => console.error('Error [index-login]:', err.code));
