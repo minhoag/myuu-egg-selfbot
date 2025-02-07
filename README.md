@@ -16,9 +16,9 @@ This project is built using **`discord.js-selfbot`**, a [Node.js](https://nodejs
 ---
 ## 📥 Easy Installation Guide
 
-1. Go to Release section and download zip file
-2. Unzip it. Open .env file with notepad (or anything that can edit text)
-3. Fill in all the empty field
+1. Go to [Release](https://github.com/minhoag/myuu-egg-selfbot/releases) and download the latest version zip file.
+2. Unzip it. Open .env file with notepad (or anything that can edit text).
+3. Fill and edit all the empty field.
 4. Run executable file and enjoy!
 ---
 ### `PREFIX`
