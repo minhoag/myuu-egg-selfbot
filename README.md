@@ -10,6 +10,9 @@ This project is built using **`discord.js-selfbot`**, a [Node.js](https://nodejs
 - Using a selfbot on a user account **violates the [Discord Terms of Service](https://discord.com/terms)** and may lead to account suspension.
 - By using this bot, you acknowledge and accept these risks.
 
+![image](https://github.com/user-attachments/assets/b04f129f-263d-46e8-b831-12d8d08af598)
+
+
 ---
 ## 📥 Easy Installation Guide
 
@@ -18,17 +21,6 @@ This project is built using **`discord.js-selfbot`**, a [Node.js](https://nodejs
 3. Fill in all the empty field
 4. Run executable file and enjoy!
 ---
-
-## 🚀 Setting Up the Bot
-
-1. Open the `.env` file using any text editor (e.g., Notepad).
-2. Fill in the required fields:
-   - **TOKEN**: Your Discord user token.
-   - **CHANNEL_ID**: The ID of the channel the bot will operate in.
-   - **PREFIX**: The command prefix you prefer.
-
----
-
 ### `PREFIX`
 
 The command prefix defines how you interact with your bot.  
@@ -39,7 +31,6 @@ You can choose any prefix you like.
     - To execute a command: `.get egg`
   - If the prefix is set to `!`:
     - To execute a command: `!get egg`
-
 ---
 
 ### `TOKEN`
