@@ -1,6 +1,6 @@
 # Myuu Egg-Collecting Selfbot
 
-This project is built using **`discord.js-selfbot-v13`**, a [Node.js](https://nodejs.org/) module that enables user accounts to interact with the Discord API v9.
+This project is built using **`discord.js-selfbot`**, a [Node.js](https://nodejs.org/) module that enables user accounts to interact with the Discord API v9.
 
 ---
 
